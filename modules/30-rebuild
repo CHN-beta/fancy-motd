@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+# shellcheck source=./framework.sh
+source "${BASE_DIR}/framework.sh"
+
+config_time="$(nix flake metadata nixos --json | jq .lastModified)"
+if [ "$config_time" == "null" ]; then return; fi
+
+print_columns "Rebuild" "$(ddiff --format '%d days %H hours %M minutes ago' "$(date -d @$config_time '+%Y-%m-%dT%H:%M:%S')" "$(date +%Y-%m-%dT%H:%M:%S)")"
