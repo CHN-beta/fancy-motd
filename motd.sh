@@ -4,7 +4,7 @@
 export LANG="en_US.UTF-8"
 
 # Dir of this scrip
-BASE_DIR=$(dirname "$(readlink -f "$0")")
+BASE_DIR=$(dirname "$(readlink -f "$0")")/../lib
 export BASE_DIR
 
 # Set config path
