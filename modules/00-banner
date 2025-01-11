@@ -4,4 +4,4 @@ set -euo pipefail
 # shellcheck source=./framework.sh
 source "${BASE_DIR}/framework.sh"
 
-[ -f /etc/fancy-motd/banner ] && print_columns "" "$(lolcat -f /etc/fancy-motd/banner)"
+[ -f /etc/fancy-motd/banner ] && lolcat -f /etc/fancy-motd/banner
