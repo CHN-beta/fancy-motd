@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-# shellcheck source=./framework.sh
-source "${BASE_DIR}/framework.sh"
-
-[ -f /etc/fancy-motd/banner ] && lolcat -f /etc/fancy-motd/banner
